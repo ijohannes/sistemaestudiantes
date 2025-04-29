@@ -72,31 +72,31 @@ public class EstudianteDAO {
         return false;
     }
 
-//    public boolean agregarEstudiante(Estudiante estudiante) {
-//        PreparedStatement ps;
-//        Connection con = getConexion();
-//        String sql = "INSERT INTO  estudiante(nombre, apellido, telefono, email)" +
-//                "VALUES(?,?,?,?)";
-//        try {
-//            ps = con.prepareStatement(sql);
-//            ps.setString(1, estudiante.getNombre());
-//            ps.setString(2, estudiante.getApellido());
-//            ps.setString(3, estudiante.getTelefono());
-//            ps.setString(4, estudiante.getEmail());
-//            ps.execute();
-//            return true;
-//        } catch (Exception e) {
-//            System.out.println("Error al agregar estudiante: " + e.getMessage());
-//        }
-//        finally {
-//            try {
-//                con.close();
-//            } catch (Exception e) {
-//                System.out.println("Ocurrio un error al cerrar conexión - agregar estudiante: " + e.getMessage());
-//            }
-//        }
-//        return false;
-//    }
+    public boolean agregarEstudiante(Estudiante estudiante) {
+        PreparedStatement ps;
+        Connection con = getConexion();
+        String sql = "INSERT INTO  estudiante(nombre, apellido, telefono, email)" +
+                "VALUES(?,?,?,?)";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, estudiante.getNombre());
+            ps.setString(2, estudiante.getApellido());
+            ps.setString(3, estudiante.getTelefono());
+            ps.setString(4, estudiante.getEmail());
+            ps.execute();
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error al agregar estudiante: " + e.getMessage());
+        }
+        finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.out.println("Ocurrio un error al cerrar conexión - agregar estudiante: " + e.getMessage());
+            }
+        }
+        return false;
+    }
 
     public boolean modificarEstudiante(Estudiante estudiante){
         PreparedStatement ps;
